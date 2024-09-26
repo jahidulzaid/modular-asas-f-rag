@@ -12,7 +12,7 @@
   - [Indexing with ColBERT](#step-2-indexing-with-colbert)
   - [Running the ColBERT Server](#step-3-start-the-colbert-server)
   - [Running the RAG Pipeline](#step-4-run-rag-pipeline)
-  - [Majority Class Server](#step-5-run-the-majority-class-server)
+  - [Majority Class Scorer](#step-5-run-the-majority-class-scorer)
 - [Evaluation](#evaluation)
 - [Citation](#citation)
 - [License](#license)
@@ -110,9 +110,9 @@ For the RAG pipeline, an additional environment for ColBERT is required:
 
 ###  5: Running the Majority Class Scorer
 
-1. **Use the ColBERT environment** to **run the majority class server**:
+1. **Use the ColBERT environment** to **run the majority class scorer**:
    ```bash
-   jupyter notebook majority_class_server.ipynb
+   jupyter notebook colbert_majority_scoring.ipynb
    ```
 
 ---
