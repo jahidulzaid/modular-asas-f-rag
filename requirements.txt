@@ -54,7 +54,7 @@ cycler==0.11.0
 cymem==2.0.7
 Cython==0.29.37
 dataclasses-json==0.5.13
-datasets==2.14.7
+datasets==2.13.2
 debugpy==1.5.1
 decorator==5.1.1
 defusedxml==0.7.1
