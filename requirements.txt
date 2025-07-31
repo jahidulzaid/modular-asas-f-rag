@@ -74,7 +74,6 @@ entrypoints==0.4
 et-xmlfile==1.1.0
 evaluate==0.3.0
 executing==0.8.3
-faiss==1.7.4
 faiss-cpu==1.8.0
 faiss-gpu==1.7.2
 farasapy==0.0.14
@@ -110,7 +109,6 @@ huggingface-hub==0.20.2
 idna==3.4
 imageio==2.9.0
 importlib-metadata==6.8.0
-install==1.3.5
 ipadic==1.0.0
 ipykernel==6.19.2
 ipython==7.34.0
