@@ -1,0 +1,5 @@
+dspy-ai==2.4.10
+pandas==2.2.2
+tqdm==4.66.5
+pydantic==2.5.0
+scikit-learn==1.2.2
