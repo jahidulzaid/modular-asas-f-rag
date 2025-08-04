@@ -14,7 +14,6 @@ appdirs==1.4.4
 arabert==1.0.1
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
-arize-phoenix==4.5.0
 arrow==1.2.3
 asttokens==2.0.5
 async-timeout==4.0.2
@@ -53,7 +52,6 @@ cryptography==41.0.2
 cycler==0.11.0
 cymem==2.0.7
 Cython==0.29.37
-dataclasses-json==0.5.13
 datasets==2.14.7
 debugpy==1.5.1
 decorator==5.1.1
@@ -67,14 +65,12 @@ docker==7.0.0
 docker-pycreds==0.4.0
 docopt==0.6.2
 dspy-ai==2.4.10
-edu_convokit==0.4.0
 einops==0.6.1
 emoji==1.4.2
 entrypoints==0.4
 et-xmlfile==1.1.0
 evaluate==0.3.0
 executing==0.8.3
-faiss==1.7.4
 faiss-cpu==1.8.0
 faiss-gpu==1.7.2
 farasapy==0.0.14
