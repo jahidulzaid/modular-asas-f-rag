@@ -14,6 +14,11 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score, f1_score, confusion_matrix,cohen_kappa_score, mean_squared_error
 
+import warnings
+warnings.filterwarnings('ignore')
+
+
+
 models = ['mistral', 'llama3-8b', 'mixtral-8x22b', 'llama3-70b']
 splits = ['ua', 'uq']
 configs = ['zeroshot', 'rag_3', 'rag_5']
