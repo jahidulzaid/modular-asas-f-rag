@@ -2,7 +2,7 @@ dspy
 tqdm
 pydantic
 scikit-learn
-langwatch
+langwatch==0.1.21
 inspect
 
 
