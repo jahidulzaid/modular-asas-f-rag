@@ -1,7 +1,4 @@
-dspy
-tqdm
-pydantic
-scikit-learn
+
 langwatch==0.1.21
 
 

@@ -13,8 +13,8 @@ import dspy
 import pandas as pd
 from tqdm import tqdm
 from pydantic import BaseModel, Field, ValidationError
-# from dspy.teleprompt import BootstrapFewShot, BootstrapFewShotWithRandomSearch
-# from dspy.teleprompt import BayesianSignatureOptimizer
+from dspy.teleprompt import BootstrapFewShot, BootstrapFewShotWithRandomSearch
+from dspy.teleprompt import BayesianSignatureOptimizer
 from sklearn.model_selection import train_test_split
 
 
