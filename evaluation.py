@@ -43,7 +43,7 @@ for split in splits:
             print(f"Accuracy: {round(accuracy_score(y_true=df['label'], y_pred=df['clean_pred_label'], normalize=True), 3)}")
             print(f"F1 Score (macro): {round(f1_score(df['label'], df['clean_pred_label'], average='macro'), 3)}")
             print(f"Quadratic Weighted Kappa (QWK): {round(cohen_kappa_score(df['label'], df['clean_pred_label'], weights='quadratic'), 3)}")
-            print(f"Root Mean Square Error (RMSE): {round(root_mean_squared_errormean_squared_error(df['score'], df['pred_score'], squared=False), 3)}\n")
+            print(f"Root Mean Square Error (RMSE): {round(root_mean_squared_error(df['score'], df['pred_score'], squared=False), 3)}\n")
 
             # Statistical Feedback Metrics
             references = df['feedback'].tolist()
