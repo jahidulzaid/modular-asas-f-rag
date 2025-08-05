@@ -297,14 +297,12 @@ toolz==0.12.0
 torch==2.0.1
 torchvision==0.15.2
 tornado==6.2
-tqdm==4.66.5
 traitlets==5.7.1
 transformers==4.36.2
 transformers-interpret==0.10.0
 triton==2.0.0
 trl==0.4.7
 typer==0.9.0
-typing==3.7.4.3
 typing_extensions==4.10.0
 typing-inspect==0.9.0
 tzdata==2023.3
@@ -325,8 +323,5 @@ wheel==0.38.4
 widgetsnbextension==4.0.5
 wrapt==1.16.0
 xformers==0.0.20
-xxhash==3.2.0
-y-py==0.5.9
-yarl==1.9.2
 ypy-websocket==0.8.2
 zipp==3.16.2
