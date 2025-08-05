@@ -31,50 +31,42 @@ bert_score = datasets.load_metric('bertscore')
 
 
 
-required_columns = ['label', 'clean_pred_label', 'score', 'pred_score', 'feedback', 'pred_feedback']
-if all(col in df.columns for col in required_columns):
-    # Proceed with evaluation
-    
-    for split in splits:
-        print(f"\n{'='*20} {split.upper()} {'='*20}\n")
-        for model in models:
-            print(f"\n{'-'*10} Model: {model.upper()} {'-'*10}\n")
-            for config in configs:
-                print(f"\n{'*'*5} Configuration: {config} {'*'*5}\n")
-                filename = f"generated_results/{split}/{split}_{config}_{model}.csv"
-                df = pd.read_csv(filename)
 
-                # Scoring Metrics
-                print("### Performance Metrics ###")
-                print(f"Accuracy: {round(accuracy_score(y_true=df['label'], y_pred=df['clean_pred_label'], normalize=True), 3)}")
-                print(f"F1 Score (macro): {round(f1_score(df['label'], df['clean_pred_label'], average='macro'), 3)}")
-                print(f"Quadratic Weighted Kappa (QWK): {round(cohen_kappa_score(df['label'], df['clean_pred_label'], weights='quadratic'), 3)}")
-                print(f"Root Mean Square Error (RMSE): {round(mean_squared_error(df['score'], df['pred_score'], squared=False), 3)}\n")
-                
-                rmse = np.sqrt(mean_squared_error(df['score'], df['pred_score']))
-                print(f"Root Mean Square Error (RMSE): {round(rmse, 3)}\n")
+for split in splits:
+    print(f"\n{'='*20} {split.upper()} {'='*20}\n")
+    for model in models:
+        print(f"\n{'-'*10} Model: {model.upper()} {'-'*10}\n")
+        for config in configs:
+            print(f"\n{'*'*5} Configuration: {config} {'*'*5}\n")
+            filename = f"generated_results/{split}/{split}_{config}_{model}.csv"
+            df = pd.read_csv(filename)
 
-                # Statistical Feedback Metrics
-                references = df['feedback'].tolist()
-                candidates = df['pred_feedback'].tolist()
-                reference_list = [[ref] for ref in references]
+            # Scoring Metrics
+            print("### Performance Metrics ###")
+            print(f"Accuracy: {round(accuracy_score(y_true=df['label'], y_pred=df['clean_pred_label'], normalize=True), 3)}")
+            print(f"F1 Score (macro): {round(f1_score(df['label'], df['clean_pred_label'], average='macro'), 3)}")
+            print(f"Quadratic Weighted Kappa (QWK): {round(cohen_kappa_score(df['label'], df['clean_pred_label'], weights='quadratic'), 3)}")
+            print(f"Root Mean Square Error (RMSE): {round(mean_squared_error(df['score'], df['pred_score'], squared=False), 3)}\n")
+            
+            rmse = np.sqrt(mean_squared_error(df['score'], df['pred_score']))
+            print(f"Root Mean Square Error (RMSE): {round(rmse, 3)}\n")
 
-                print("### Feedback Evaluation Metrics ###")
-                sacrebleu_score = sacrebleu.compute(predictions=candidates, references=[[x] for x in references])['score']
-                print(f"SacreBLEU Score: {round(sacrebleu_score, 3)}")
+            # Statistical Feedback Metrics
+            references = df['feedback'].tolist()
+            candidates = df['pred_feedback'].tolist()
+            reference_list = [[ref] for ref in references]
 
-                rouge_score = rouge.compute(predictions=candidates, references=references)['rouge2']
-                print(f"ROUGE-2 F1 Score: {round(rouge_score.mid.fmeasure, 3)}")
+            print("### Feedback Evaluation Metrics ###")
+            sacrebleu_score = sacrebleu.compute(predictions=candidates, references=[[x] for x in references])['score']
+            print(f"SacreBLEU Score: {round(sacrebleu_score, 3)}")
 
-                meteor_score = meteor.compute(predictions=candidates, references=references)['meteor']
-                print(f"METEOR Score: {round(meteor_score, 3)}")
+            rouge_score = rouge.compute(predictions=candidates, references=references)['rouge2']
+            print(f"ROUGE-2 F1 Score: {round(rouge_score.mid.fmeasure, 3)}")
 
-                bert_f1 = np.array(bert_score.compute(predictions=candidates, references=references, lang='en', rescale_with_baseline=True)['f1']).mean().item()
-                print(f"BERT Score (F1): {round(bert_f1, 3)}\n")
+            meteor_score = meteor.compute(predictions=candidates, references=references)['meteor']
+            print(f"METEOR Score: {round(meteor_score, 3)}")
 
-                print("-" * 40)
-else:
-    print(f"Missing required columns in {filename}")
+            bert_f1 = np.array(bert_score.compute(predictions=candidates, references=references, lang='en', rescale_with_baseline=True)['f1']).mean().item()
+            print(f"BERT Score (F1): {round(bert_f1, 3)}\n")
 
-
-
+            print("-" * 40)
