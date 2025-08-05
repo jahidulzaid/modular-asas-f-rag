@@ -20,7 +20,7 @@ warnings.filterwarnings('ignore')
 
 
 
-models = ['mistral', 'llama3-8b', 'mixtral-8x22b', 'llama3-70b']
+models = ['mistral', 'llama3-8b', 'mixtral-8x22b']
 splits = ['ua', 'uq']
 configs = ['zeroshot', 'rag_3', 'rag_5']
 
