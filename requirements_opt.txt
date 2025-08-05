@@ -1,6 +1,8 @@
 dspy
-pandas
 tqdm
 pydantic
-sklearn
+scikit-learn
 langwatch
+inspect
+
+
