@@ -25,7 +25,7 @@ NUM_EXAMPLES = 3
 
 # %%
 llm = dspy.OllamaLocal(model=MODEL_NAME, max_tokens=8192, temperature=0.0)
-colbertv2_saf = dspy.ColBERTv2(url='http://127.0.0.1:8890/api/search')
+colbertv2_saf = dspy.ColBERTv2(url='http://103.102.42.109:11434/')
 dspy.settings.configure(lm=llm)
 dspy.settings.configure(rm=colbertv2_saf)
 
