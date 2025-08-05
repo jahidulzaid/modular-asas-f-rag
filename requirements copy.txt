@@ -300,9 +300,7 @@ tornado==6.2
 traitlets==5.7.1
 transformers==4.36.2
 transformers-interpret==0.10.0
-triton==2.0.0
 trl==0.4.7
-typer==0.9.0
 typing_extensions==4.10.0
 typing-inspect==0.9.0
 tzdata==2023.3
