@@ -106,7 +106,6 @@ huggingface-hub==0.20.2
 idna==3.4
 imageio==2.9.0
 importlib-metadata==6.8.0
-install==1.3.5
 ipadic==1.0.0
 ipykernel==6.19.2
 ipython==7.34.0
